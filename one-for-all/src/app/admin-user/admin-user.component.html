@@ -1,1 +1,60 @@
-<p>admin-user works!</p>
+<div class="wrapper">
+    <div id="selector">
+        <label for="organizer">Korisnici: </label>
+        <select name="organizer" id="name">
+                <option *ngFor="let name of names" value={{name.id}}> {{name.name}}</option>
+        </select>
+        <img src="../../assets/icons8-trash-30.png" id="trash">
+    </div>
+    <hr>
+    <div class="main-container">
+        <div class="info">
+            <div class="row">
+                <label for="kime">Korisničko ime: </label>
+                <input type="text" name="kime" id="kime" value={{kime}}>
+            </div>
+
+            <div class="row">
+                <label for="ime">Ime:</label>
+                <input type="text" name="ime" id="ime" value={{ime}}>
+            </div>
+
+            <div class="row">
+                <label for="prezime">Prezime: </label>
+                <input type="text" name="prezime" id="prezime" value={{prezime}}>
+            </div>
+
+            <div class="row">
+                <label for="lozinka">Lozinka:</label>
+                <input type="password" name="lozinka" id="lozinka" value={{lozinka}}>
+            </div>
+
+            <div class="row">
+                <label for="telefon">Telefon: </label>
+                <input type="text" name="telefon" id="telefon" value={{telefon}}>
+            </div>
+
+            <div class="row">
+                <label for="mail">Email: </label>
+                <input type="email" name="mail" id="mail" value={{mail}}>
+            </div>
+
+            <div class="row">
+                <label for="zanimanje">Zanimanje: </label>
+                <input type="text" name="zanimanje" id="zanimanje" value={{zanimanje}}>
+            </div>
+
+            <div class="row">
+                <label for="adresa">Adresa:</label>
+                <input type="text" name="adresa" id="adresa" value={{adresa}}>
+            </div>
+
+            <div class="row">
+                <label for="datum">Darum rođenja: </label>
+                <input type="date" name="datum" id="datum" value={{datums}}>
+            </div>
+
+            <button id="dugme">Update</button>
+        </div>
+    </div>  
+</div>

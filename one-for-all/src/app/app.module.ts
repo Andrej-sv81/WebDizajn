@@ -13,6 +13,7 @@ import { AdminUserComponent } from './admin-user/admin-user.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { ErrorComponent } from './error/error.component';
 import { RegisterComponent } from './register/register.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegisterComponent } from './register/register.component';
     AdminUserComponent,
     AdminNavComponent,
     ErrorComponent,
-    RegisterComponent
+    RegisterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
