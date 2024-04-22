@@ -15,7 +15,7 @@ imageClick() {
 
 imageUrl: string = 'https://i.imgur.com/OV15WM6.jpeg';
 address: string = 'Knez Mihailova 48, Beograd, 11000';
-year: string = '2015';
+year: number = 2015;
 naziv: string = 'BeoArt Fest';
 telefon: string ='011/3042-568';
 mail: string = 'kontakt@beoartfest.rs';
