@@ -1,3 +1,14 @@
+h1{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+hr{
+    color: #141E46;
+    margin-bottom: 2rem;
+}
+
 #img-wrapper{
     margin-top: 3rem;
 }
@@ -25,6 +36,6 @@
 .image-item p {
     margin-top: 0.5rem;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 400;
 }
   

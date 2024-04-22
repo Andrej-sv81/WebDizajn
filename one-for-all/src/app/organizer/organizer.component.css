@@ -8,12 +8,27 @@
     border: 2px solid #8DECB4;
 }
 
-#info{
-    display: inline-block;
+h2{
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 4rem;
+    font-weight: bold;
+}
+
+hr{
+    color: #141E46;
+    margin-bottom: 2rem;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .info p{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    line-height: 1.7rem;
 }
 
 hr{
@@ -38,9 +53,9 @@ hr{
 }
   
 .image-item img {
-    width: 100%;
-    height: 50vh;
-    border-radius: 0.5rem;
+    width: 65%;
+    aspect-ratio: 1;
+    border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
     border: 2px solid #8DECB4;
@@ -49,7 +64,20 @@ hr{
 
   
 .image-item p {
+    position: relative;
+    bottom: 5rem;
+    left: 12rem;
     margin-top: 0.5rem;
     font-size: 1.5rem;
     font-weight: bold;
+    width: 12.5rem;
+    padding: 1rem; 
+    background-color: #FFF5E0;
+    border-radius: 50% / 1.2rem;
+    border: 2px solid #141E46;
+    transform: rotate(-10deg);
+}
+
+#mail{
+    text-decoration: underline;
 }

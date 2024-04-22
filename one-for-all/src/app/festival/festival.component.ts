@@ -6,17 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./festival.component.css']
 })
 export class FestivalComponent {
-  tip: any;
-  naziv: any;
-  prevoz: any;
-  cena: any;
-  maxOsoba: any;
-  opis: any;
+  tip: string = 'Muzički';
+  naziv: string = 'Festival Grčkih Melodija';
+  prevoz: string = 'Autobus';
+  cena: string = '1500' + ' DIN';
+  maxOsoba: number = 300;
+  opis: string = 'Istražite bogatstvo grčke muzičke tradicije kroz niz koncerata i radionica, gde će vas voditi kroz istoriju grčke muzike, od antike do modernih dana, uz prelepi ambijent Sitonije.';
   images = [
-    { url: 'https://i.imgur.com/OV15WM6.jpeg', name: 'BeoArt Fest' },
-    { url: 'https://i.imgur.com/jsFrKCn.jpeg', name: 'Etno Srbija' },
-    { url: 'https://i.imgur.com/NhAzBBF.jpeg', name: 'Lazarevac Fest' },
-    { url: 'https://i.imgur.com/k4nEZm6.jpeg', name: 'Dunavski Horizonti' },
-    { url: 'https://i.imgur.com/nmAOOHF.jpeg', name: 'Urban Beat' },
+    { url: 'https://i.imgur.com/LMOgMnP.jpeg'},
+    { url: 'https://i.imgur.com/yBtIoEE.jpeg'},
+    { url: 'https://i.imgur.com/aHRcuqe.jpeg'},
+    { url: 'https://i.imgur.com/HxEZ2EO.jpeg'},
+    { url: 'https://i.imgur.com/WhhEFXe.jpeg'},
   ];
 }
