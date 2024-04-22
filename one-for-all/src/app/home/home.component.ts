@@ -18,7 +18,7 @@ images = [
 constructor(private router: Router){};
 
 imageClick() {
-  this.router.navigate(['']);
+  this.router.navigate(['/organizer', 1]);
 }
 
 ngOnInit(): void {
