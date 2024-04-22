@@ -1,0 +1,27 @@
+#img-wrapper{
+    margin-top: 3rem;
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.2rem;
+}
+
+.image-item {
+    text-align: center;
+}
+  
+.image-item img {
+    width: 100%;
+    height: 50vh;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+  
+.image-item p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+  
