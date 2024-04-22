@@ -1,0 +1,29 @@
+#home{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: red;
+}
+
+#logo{
+    display: inline-block; 
+    margin: 1rem;
+    align-items: center;
+}
+
+#logo a{
+    margin-left: 2rem;
+    text-decoration: none;
+    font-size: 2rem;
+
+}
+
+#nav_list{
+    display: flex;
+}
+
+.nav-list-item {
+    display: inline-block;
+    margin-left: 2rem;
+    text-align: center;
+  }

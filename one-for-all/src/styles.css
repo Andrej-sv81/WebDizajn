@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+    height: 100%;
+ }
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: linear-gradient(#1d1c1c 20%, #ffffff 80%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.wrapper{
+    width: 80%;
+    margin: auto;
+}
