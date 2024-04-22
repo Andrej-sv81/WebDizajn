@@ -6,9 +6,8 @@ html, body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background: linear-gradient(#1d1c1c 20%, #ffffff 80%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #41B06E;
+    color: #141E46;
 }
 
 .wrapper{

@@ -1,1 +1,14 @@
-<p>festival works!</p>
+<div class="wrapper">
+    <div class="main-container">
+        <h1>{{naziv}}</h1>
+        <div class="info">
+            <p>{{tip}}</p><br>
+            <p>{{prevoz}}</p>
+            <p>{{cena}}</p>
+            <p>{{opis}}</p>
+            <div *ngFor="let image of images" id="img-wrapepr">
+                <img [src]="image.url" alt="{{ image.name }}">
+            </div>
+        </div>
+    </div>  
+</div>s
