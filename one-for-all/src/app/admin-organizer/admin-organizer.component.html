@@ -1,1 +1,47 @@
-<p>admin-organizer works!</p>
+<div class="wrapper">
+    <div id="selector">
+        <label for="organizer">Organizatori: </label>
+        <select name="organizer" id="name">
+                <option *ngFor="let name of names" value={{name.id}}> {{name.name}}</option>
+        </select>
+        <img src="../../assets/icons8-trash-30.png" id="trash">
+    </div>
+    <hr>
+    <div class="main-container">
+        <div class="info">
+            <div class="row">
+                <label for="naziv">Naziv: </label>
+                <input type="text" name="naziv" id="naziv" value={{naziv}}>
+            </div>
+
+            <div class="row">
+                <label for="godinaa">Godina osnivanja:</label>
+                <input type="number" name="godina" id="godina" value={{year}}>
+            </div>
+
+            <div class="row">
+                <label for="adresa">Adresa: </label>
+                <input type="text" name="adresa" id="adresa" value={{address}}>
+            </div>
+
+            <div class="row">
+                <label for="telefon">Telefon: </label>
+                <input type="text" name="telefon" id="telefon" value={{telefon}}>
+            </div>
+
+            <div class="row">
+                <label for="mail">Email: </label>
+                <input type="email" name="mail" id="mail" value={{mail}}>
+            </div>
+            <button id="dugme">Update</button>
+        </div>
+    </div>  
+    <hr>
+    <div id="selector">
+        <label for="festivall">Festivali: </label>
+        <select name="festivall" id="name">
+                <option *ngFor="let name of namesFest" value={{name.id}}> {{name.name}}</option>
+        </select>
+        <img src="../../assets/icons8-trash-30.png" id="trash">
+    </div>
+</div>

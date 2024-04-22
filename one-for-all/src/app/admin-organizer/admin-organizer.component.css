@@ -1,0 +1,79 @@
+#selector{
+    display: flex;
+    justify-content: center;
+}
+
+#selector label{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    align-self: center;
+}
+
+#name{
+    width: 15rem;
+    height: 3rem;
+    background-color: #8DECB4;
+    border: 1px solid #141E46;
+    border-radius: 1.5rem;
+    text-align: center;
+    color: #141E46;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+hr{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #141E46;
+}
+
+#trash{
+    width: 2rem;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+#trash:hover{
+    transform: translateY(3px);
+    box-shadow: 1px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 3rem;
+}
+.info label{
+    font-size: 1.6rem;
+    
+}
+
+.info input{
+    width: 20rem;
+    height: 2rem;
+    font-size: 1.2rem;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+#dugme{
+    margin-top: 1.5rem;
+    height: 2.5rem;
+    background-color: #141E46;
+    border: 1px solid #8DECB4;
+    border-radius: 1.25rem;
+    color: #8DECB4;
+    font-size: 1.5rem;
+}
+
+#dugme:hover{
+    transform: translateY(5px);
+}
+

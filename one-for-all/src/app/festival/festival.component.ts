@@ -9,7 +9,7 @@ export class FestivalComponent {
   tip: string = 'Muzički';
   naziv: string = 'Festival Grčkih Melodija';
   prevoz: string = 'Autobus';
-  cena: string = '1500' + ' DIN';
+  cena: string = '1500' + ' RSD';
   maxOsoba: number = 300;
   opis: string = 'Istražite bogatstvo grčke muzičke tradicije kroz niz koncerata i radionica, gde će vas voditi kroz istoriju grčke muzike, od antike do modernih dana, uz prelepi ambijent Sitonije.';
   images = [
