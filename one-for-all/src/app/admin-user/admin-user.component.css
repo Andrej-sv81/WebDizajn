@@ -77,3 +77,14 @@ hr{
     transform: translateY(5px);
 }
 
+.correct-lab{
+    display: contents;
+
+}
+
+.move-up{
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+

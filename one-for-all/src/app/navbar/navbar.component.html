@@ -15,13 +15,100 @@
                 <li class="nav-list-item">
                     <a href="admin-user">Korisnici</a>
                 </li>
-                <li class="nav-list-item">
-                    <a href="">Registracija</a>
-                </li>s
-                <li class="nav-list-item">
-                    <a href="">Log In</a>
-                </li>
+                <button type="button" class="nav-list-item button" data-bs-toggle="modal" data-bs-target="#regModal">
+                    Registracija
+                </button>
+                <button type="button" class="nav-list-item button" data-bs-toggle="modal" data-bs-target="#logModal">
+                    Log In
+                </button>
             </ul>
         </nav>
     </div>
+
+    <div class="modal fade" id="logModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Log In</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <label class="correct-lab" for="username">Korisničko Ime: </label>
+                    <input class="input-f" type="text" id="username">
+                </div>
+                <div class="row">
+                    <label class="correct-lab" for="password">Lozinka: </label>
+                    <input class="input-f" type="password" id="password">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary custom-btn">Log In</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        
+        <div class="modal fade" id="regModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body flex-col">
+                    <div class="row">
+                        <label class="correct-lab" for="kime">Korisničko ime: </label>
+                        <input class="move-up" type="text" name="kime" id="kime">
+                    </div>
+    
+                    <div class="row">
+                        <label class="correct-lab"  for="ime">Ime:</label>
+                        <input class="move-up" type="text" name="ime" id="ime">
+                    </div>
+    
+                    <div class="row">
+                        <label class="correct-lab"  for="prezime">Prezime: </label>
+                        <input class="move-up" type="text" name="prezime" id="prezime">
+                    </div>
+    
+                    <div class="row">
+                        <label class="correct-lab"  for="lozinka">Lozinka:</label>
+                        <input class="move-up" type="password" name="lozinka" id="lozinka">
+                    </div>
+    
+                    <div class="row">
+                        <label class="correct-lab"  for="telefon">Telefon: </label>
+                        <input class="move-up" type="text" name="telefon" id="telefon">
+                    </div>
+    
+                    <div class="row">
+                        <label class="correct-lab"  for="mail">Email: </label>
+                        <input class="move-up" type="email" name="mail" id="mail">
+                    </div>
+    
+                    <div class="row">
+                        <label class="correct-lab"  for="zanimanje">Zanimanje: </label>
+                        <input class="move-up" type="text" name="zanimanje" id="zanimanje">
+                    </div>
+    
+                    <div class="row">
+                        <label class="correct-lab"  for="adresa">Adresa:</label>
+                        <input class="move-up" type="text" name="adresa" id="adresa">
+                    </div>
+    
+                    <div class="row">
+                        <label class="correct-lab"  for="datum">Darum rođenja: </label>
+                        <input class="move-up" type="date" name="datum" id="datum">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary custom-btn">Registruj se</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
 </div>
+
