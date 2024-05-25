@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Organizator } from '../models/organizator-model';
+import { MainService } from '../main.service';
+import { Festival } from '../models/festival-model';
 
 @Component({
   selector: 'app-organizer',
@@ -7,25 +10,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./organizer.component.css']
 })
 export class OrganizerComponent {
-constructor(private router: Router){};
 
-imageClick() {
-    this.router.navigate(['/festival', 1]);
+id: string | null | undefined
+org: Organizator | undefined;
+festivals: Festival[] | undefined;
+constructor(private router: Router, private route: ActivatedRoute, private service: MainService){};
+
+imageClick(id: string) {
+    this.router.navigate(['/festival', this.org?.festivali + '/' + id]);
 }
 
-imageUrl: string = 'https://i.imgur.com/OV15WM6.jpeg';
-address: string = 'Knez Mihailova 48, Beograd, 11000';
-year: number = 2015;
-naziv: string = 'BeoArt Fest';
-telefon: string ='011/3042-568';
-mail: string = 'kontakt@beoartfest.rs';
+ngOnInit(): void {
+  this.id = this.route.snapshot.paramMap.get('orgId');
+  if(this.id){
+    this.service.getOrganizator(this.id)?.subscribe(data => {
+      this.org = data;
+      this.service.getFestivals(this.org.festivali).subscribe(data => {
+        this.festivals = data;
+    })
 
-images = [
-  { url: 'https://i.imgur.com/LMOgMnP.jpeg', name: 'Festival Grčkih Melodija' },
-  { url: 'https://i.imgur.com/13NPfCE.jpeg', name: 'Atoski Slikarski Dnevnik' },
-  { url: 'https://i.imgur.com/zHG54w5.jpeg', name: 'Karneval u Platamonu' },
-  { url: 'https://i.imgur.com/S6vhQ9h.jpeg', name: 'Egejske Kulturne Noći' },
-  { url: 'https://i.imgur.com/QORUNqY.jpeg', name: 'Vrasna Etno Festival' },
-];
-
+    })
+    }
+  }
 }

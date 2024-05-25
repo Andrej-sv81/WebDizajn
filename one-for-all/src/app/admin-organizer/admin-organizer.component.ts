@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Organizator } from '../models/organizator-model';
+import { Router } from '@angular/router';
+import { MainService } from '../main.service';
+import { Festival } from '../models/festival-model';
 
 @Component({
   selector: 'app-admin-organizer',
@@ -6,27 +10,56 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-organizer.component.css']
 })
 export class AdminOrganizerComponent {
-  names = [
-    { id: 1, name: 'BeoArt Fest'},
-    { id: 2, name: 'Etno Srbija'},
-    { id: 3, name: 'Lazarevac Fest'},
-    { id: 4, name: 'Dunavski Horizonti'},
-    { id: 5, name: 'Urban Beat'},
-];
 
-namesFest = [
-  { id: 1, name: 'Festival Grčkih Melodija'},
-  { id: 2, name: 'Atoski Slikarski Dnevnik'},
-  { id: 3, name: 'Karneval u Platamonu'},
-  { id: 4, name: 'Egejske Kulturne Noći'},
-  { id: 5, name: 'Vrasna Etno Festival'},
-];
 
-imageUrl: any;
-naziv: string = 'BeoArt Fest';
-year: number = 2015;
-address: string = 'Knez Mihailova 48, Beograd, 11000';
-telefon: string ='011/3042-568';
-mail: string = 'kontakt@beoartfest.rs';
+  organizatori: Organizator[] = [];
+  selectedOrganizerId: string | undefined;
+  selectedOrganizer: Organizator | undefined;
+  festivals: Festival[] | undefined;
+  selectedFestId: string | undefined;
+  
+  constructor(private router: Router, private service: MainService){};
 
+  ngOnInit(): void {
+    this.service.getOrganizatori().subscribe(data => {
+      this.organizatori = data;
+      this.onOrganizerinit(this.organizatori[0].id);
+      this.selectedOrganizerId = this.organizatori[0].id;
+    });
+  }
+
+  onOrganizerChange(event: Event): void {
+    const selectedId = (event.target as HTMLSelectElement).value;
+    if (selectedId) {
+      this.service.getOrganizator(selectedId)?.subscribe(
+        data => {
+          this.selectedOrganizer = data;
+          this.service.getFestivals(this.selectedOrganizer.festivali)?.subscribe(
+            data => {
+              this.festivals = data;
+              this.selectedFestId = this.festivals[0].id;
+          });
+        }
+      );
+    }
+  }
+
+  onOrganizerinit(id: string): void {
+    if (id) {
+      this.service.getOrganizator(id)?.subscribe(
+        data => {
+          this.selectedOrganizer = data;
+          this.service.getFestivals(this.selectedOrganizer.festivali)?.subscribe(
+            data => {
+              this.festivals = data;
+              this.selectedFestId =this.festivals[0].id;
+          });
+        }
+      );
+    }
+  }
+
+  onFestChange($event: Event): void {
+
+  }
 }

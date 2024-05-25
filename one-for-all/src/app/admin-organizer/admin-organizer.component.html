@@ -1,8 +1,8 @@
 <div class="wrapper">
     <div id="selector">
         <label for="organizer">Organizatori: </label>
-        <select name="organizer" id="name">
-                <option *ngFor="let name of names" value={{name.id}}> {{name.name}}</option>
+        <select name="organizer" id="name" [(ngModel)]="selectedOrganizerId" (change)="onOrganizerChange($event)">
+                <option *ngFor="let org of organizatori" [value]=org.id> {{org.naziv}}</option>
         </select>
         <img src="../../assets/icons8-trash-30.png" id="trash">
     </div>
@@ -11,27 +11,27 @@
         <div class="info">
             <div class="row">
                 <label for="naziv">Naziv: </label>
-                <input type="text" name="naziv" id="naziv" value={{naziv}}>
+                <input type="text" name="naziv" id="naziv" value={{selectedOrganizer?.naziv}}>
             </div>
 
             <div class="row">
                 <label for="godinaa">Godina osnivanja:</label>
-                <input type="number" name="godina" id="godina" value={{year}}>
+                <input type="number" name="godina" id="godina" value={{selectedOrganizer?.godinaOsnivanja}}>
             </div>
 
             <div class="row">
                 <label for="adresa">Adresa: </label>
-                <input type="text" name="adresa" id="adresa" value={{address}}>
+                <input type="text" name="adresa" id="adresa" value={{selectedOrganizer?.adresa}}>
             </div>
 
             <div class="row">
                 <label for="telefon">Telefon: </label>
-                <input type="text" name="telefon" id="telefon" value={{telefon}}>
+                <input type="text" name="telefon" id="telefon" value={{selectedOrganizer?.kontaktTelefon}}>
             </div>
 
             <div class="row">
                 <label for="mail">Email: </label>
-                <input type="email" name="mail" id="mail" value={{mail}}>
+                <input type="email" name="mail" id="mail" value={{selectedOrganizer?.email}}>
             </div>
             <button id="dugme">Update</button>
         </div>
@@ -39,8 +39,8 @@
     <hr>
     <div id="selector">
         <label for="festivall">Festivali: </label>
-        <select name="festivall" id="name">
-                <option *ngFor="let name of namesFest" value={{name.id}}> {{name.name}}</option>
+        <select name="festivall" id="name" [(ngModel)]="selectedFestId" (change)="onFestChange($event)">
+                <option *ngFor="let fest of festivals" [value]=fest.id> {{fest.naziv}}</option>
         </select>
         <img src="../../assets/icons8-trash-30.png" id="trash">
     </div>

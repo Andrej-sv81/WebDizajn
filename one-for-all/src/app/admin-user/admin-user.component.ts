@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MainService } from '../main.service';
+import { Korisnik } from '../models/korisnik-model';
 
 @Component({
   selector: 'app-admin-user',
@@ -6,22 +8,39 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-user.component.css']
 })
 export class AdminUserComponent {
+  users: Korisnik[] = [];
+  selectedUserId: string | undefined;
+  selectedUser: Korisnik | undefined;
+  ime: string = ''
+  constructor(private service: MainService) {}
 
-names = [
-  { id: 1, name: 'petar_p'},
-  { id: 2, name: 'jovana_j'},
-  { id: 3, name: 'markom'},
-  { id: 4, name: 'filipf'},
-  { id: 5, name: 'tijanat'},
-];
-telefon: string ='011/3042-568';
-mail: string = 'kontakt@beoartfest.rs';
-kime: string = 'petar_p';
-ime: string = 'Petar';
-prezime: string = 'Pavlović';
-lozinka: string = 'novapetar321';
-zanimanje: string = 'novapetar321';
-adresa: string = 'Bulevar Oslobođenja 101, Novi Sad, 21000';
-datums: string = '1994-10-22';
+  ngOnInit(): void {
+    this.service.getUsers().subscribe(
+      data => {
+        this.users = data;
+        if (data.length > 0) {
+          this.selectedUserId = data[0].id;
+          this.onUserChange(this.selectedUserId); 
+        }
+      }
+    );
+  }
 
+  onUserChange(userId: string): void {
+    if (userId) {
+      this.service.getUserById(userId).subscribe(
+        data => {
+          this.selectedUser = data;
+          this.ime = this.selectedUser.korisnickoIme;
+        }
+      );
+    }
+  }
+
+  onUserSelect(event: Event){
+    const selectedId = (event.target as HTMLSelectElement).value;
+    if(selectedId){
+      this.onUserChange(selectedId);
+    }
+  }
 }

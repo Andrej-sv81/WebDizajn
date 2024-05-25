@@ -1,22 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MainService } from '../main.service';
+import { Festival } from '../models/festival-model';
 
 @Component({
   selector: 'app-festival',
   templateUrl: './festival.component.html',
   styleUrls: ['./festival.component.css']
 })
-export class FestivalComponent {
-  tip: string = 'Muzički';
-  naziv: string = 'Festival Grčkih Melodija';
-  prevoz: string = 'Autobus';
-  cena: string = '1500' + ' RSD';
-  maxOsoba: number = 300;
-  opis: string = 'Istražite bogatstvo grčke muzičke tradicije kroz niz koncerata i radionica, gde će vas voditi kroz istoriju grčke muzike, od antike do modernih dana, uz prelepi ambijent Sitonije.';
-  images = [
-    { url: 'https://i.imgur.com/LMOgMnP.jpeg'},
-    { url: 'https://i.imgur.com/yBtIoEE.jpeg'},
-    { url: 'https://i.imgur.com/aHRcuqe.jpeg'},
-    { url: 'https://i.imgur.com/HxEZ2EO.jpeg'},
-    { url: 'https://i.imgur.com/WhhEFXe.jpeg'},
-  ];
+export class FestivalComponent implements OnInit{
+
+  id: string | null | undefined;
+  fest: Festival | undefined;
+
+  constructor(private route: ActivatedRoute, private service: MainService){};
+
+  ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('festId');
+    if(this.id){
+      this.service.getFestival(this.id)?.subscribe(data => {
+        this.fest = data;
+    })
+  }
+  }
+  
 }
+

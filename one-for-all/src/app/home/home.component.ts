@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Organizator } from '../models/organizator-model';
+import { MainService } from '../main.service';
 
 @Component({
   selector: 'app-home',
@@ -8,20 +10,18 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit{
 
-images = [
-    { url: 'https://i.imgur.com/OV15WM6.jpeg', name: 'BeoArt Fest' },
-    { url: 'https://i.imgur.com/jsFrKCn.jpeg', name: 'Etno Srbija' },
-    { url: 'https://i.imgur.com/NhAzBBF.jpeg', name: 'Lazarevac Fest' },
-    { url: 'https://i.imgur.com/k4nEZm6.jpeg', name: 'Dunavski Horizonti' },
-    { url: 'https://i.imgur.com/nmAOOHF.jpeg', name: 'Urban Beat' },
-];
-constructor(private router: Router){};
+organizatori: Organizator[] = [];
 
-imageClick() {
-  this.router.navigate(['/organizer', 1]);
+constructor(private router: Router, private service: MainService){};
+
+imageClick(id: string) {
+  this.router.navigate(['/organizer', id]);
 }
 
 ngOnInit(): void {
+  this.service.getOrganizatori().subscribe(data => {
+    this.organizatori = data;
+  });
 }
 
 }
