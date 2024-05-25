@@ -105,3 +105,18 @@
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 600px) {
+    .nav-list-item{
+        display: none;
+    }
+
+    #logo a{
+        font-size: 1rem;
+        display: block;
+    }
+
+    #logo{
+        align-items: center;
+    }
+}

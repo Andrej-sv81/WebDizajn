@@ -42,7 +42,7 @@ hr{
 #img-wrapper{
     margin-top: 3rem;
 }
-.image-grid {
+.image-grid{
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 1.2rem;
@@ -80,4 +80,29 @@ hr{
 
 #mail{
     text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .main-container{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #main-image{
+        max-width: 80%;
+    }
+
+    h2{
+        font-size: 1rem;
+    }
+
+    .image-grid{
+        grid-template-columns: repeat(1, 1fr); 
+
+    }
+
+    .image-item p{
+        left: 4rem;
+        bottom: 2rem;
+    }
 }

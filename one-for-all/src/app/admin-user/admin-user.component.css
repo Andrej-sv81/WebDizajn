@@ -104,3 +104,22 @@ hr{
 .modal-footer{
     background-color: #8DECB4;
 }
+
+@media (max-width: 600px) {
+    #selector{
+        flex-direction: column;
+        align-items: center;
+    }
+    #selector label{
+        margin-bottom: 0.5rem;
+        margin-right: 0rem;
+    }
+    #trash{
+        margin-left: 0rem;
+        margin-top: 0.4rem;
+    }
+
+    .info input{
+        margin-top: 2rem;
+    }
+}
