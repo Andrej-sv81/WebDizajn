@@ -4,7 +4,7 @@
         <select name="organizer" id="name" [(ngModel)]="selectedUserId" (change)="onUserSelect($event)">
                 <option *ngFor="let u of users" value={{u.id}}> {{u.korisnickoIme}}</option>
         </select>
-        <img src="../../assets/icons8-trash-30.png" id="trash">
+        <img src="../../assets/icons8-trash-30.png" id="trash" data-bs-toggle="modal" data-bs-target="#exampleModal">
     </div>
     <hr>
     <div class="main-container">
@@ -54,7 +54,26 @@
                     <input class="move-up" type="date" name="datum" id="datum" value={{selectedUser?.datumRodjenja}}>
                 </div>
 
-                <button id="dugme">Update</button>
+                <button id="dugme" data-bs-toggle="modal" data-bs-target="#exampleModal">Ažuriraj</button>
         </div>
     </div>  
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <strong>Da li ste sigurni?</strong>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary custom-btn-2">Nazad</button>
+          <button type="button" class="btn btn-primary custom-btn">Da</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 </div>

@@ -4,7 +4,7 @@
         <select name="organizer" id="name" [(ngModel)]="selectedOrganizerId" (change)="onOrganizerChange($event)">
                 <option *ngFor="let org of organizatori" [value]=org.id> {{org.naziv}}</option>
         </select>
-        <img src="../../assets/icons8-trash-30.png" id="trash">
+        <img src="../../assets/icons8-trash-30.png" id="trash"  data-bs-toggle="modal" data-bs-target="#exampleModal">
     </div>
     <hr>
     <div class="main-container">
@@ -33,7 +33,7 @@
                 <label class="correct-lab" for="mail">Email: </label>
                 <input class="move-up" type="email" name="mail" id="mail" value={{selectedOrganizer?.email}}>
             </div>
-            <button id="dugme">Update</button>
+            <button id="dugme"  data-bs-toggle="modal" data-bs-target="#exampleModal">Ažuriraj</button>
         </div>
     </div>  
     <hr>
@@ -42,6 +42,24 @@
         <select name="festivall" id="name" [(ngModel)]="selectedFestId" (change)="onFestChange($event)">
                 <option *ngFor="let fest of festivals" [value]=fest.id> {{fest.naziv}}</option>
         </select>
-        <img src="../../assets/icons8-trash-30.png" id="trash">
+        <img src="../../assets/icons8-trash-30.png" id="trash"  data-bs-toggle="modal" data-bs-target="#exampleModal">
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <strong>Da li ste sigurni?</strong>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary custom-btn-2">Nazad</button>
+              <button type="button" class="btn btn-primary custom-btn">Da</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>

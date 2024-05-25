@@ -86,3 +86,20 @@ hr{
     margin-top: -10px;
     margin-bottom: 10px;
 }
+
+.custom-btn{
+    background-color: #141E46;
+}
+
+.custom-btn-2{
+    background-color: white;
+    color: black;
+}
+
+.modal-header{
+    background-color: #f7f7f7;
+}
+
+.modal-footer{
+    background-color: #8DECB4;
+}
